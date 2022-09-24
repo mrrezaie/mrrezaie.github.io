@@ -1,14 +1,15 @@
 body {
     margin: 20px auto;
     width: 85%;
+    height: 100%;
 
 }
 
 nav ul, footer ul {
     padding: 0px;
-    margin: 20px auto;
     list-style: none;
     font-weight: bold;
+    vertical-align: bottom
 }
 
 nav ul li, footer ul li {
