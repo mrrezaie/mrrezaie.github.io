@@ -5,6 +5,8 @@ body {
 }
 
 nav ul, footer ul {
+    padding: 0px;
+    margin: 20px auto;
     list-style: none;
     font-weight: bold;
 }
