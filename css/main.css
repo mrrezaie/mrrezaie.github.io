@@ -1,11 +1,10 @@
 body {
-    margin: 60px auto;
+    margin: 20px auto;
     width: 85%;
 
 }
 
 nav ul, footer ul {
-    padding: 20px;
     list-style: none;
     font-weight: bold;
 }
