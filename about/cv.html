@@ -1,9 +1,10 @@
-<div>
+<div id="cv">
 	<h2> <i>Curriculum Vitae</i> </h2>
 	<h1> Mohammadreza Rezaie </h1>
 	<script>
 	var date = document.lastModified;
-	document.getElementById().innerHTML = "Last update: " + date;
+	var lastModifiedDate = new Date(date);
+	document.getElementById("cv").innerHTML = "Last modified: " + lastModifiedDate;
 	</script>
 	<hr>
 
