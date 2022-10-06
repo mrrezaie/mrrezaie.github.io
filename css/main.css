@@ -1,5 +1,6 @@
 body {
-padding: 0px 35px 0px 35px;
+    background: #f0ffff;
+    padding: 0px 35px 0px 35px;
 }
 
 nav ul, footer ul {
