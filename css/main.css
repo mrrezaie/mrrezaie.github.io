@@ -30,7 +30,8 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
@@ -41,8 +42,8 @@ li {
 }
 
 li a {
-  display: block;
-  color: white;
+/*   display: block; */
+  color: #666;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -53,7 +54,3 @@ li a {
 }
 
 
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: #111;
-}
