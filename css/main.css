@@ -11,7 +11,7 @@ nav ul, footer ul {
 
 nav ul li, footer ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: 0px;
 }
 
 footer {
@@ -22,12 +22,18 @@ nav {
     border-bottom: 1px solid #d5d5d5;
 }
 
+
+
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #333;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
 }
 
 li {
@@ -41,6 +47,11 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
 }
+
+.active {
+  background-color: #04AA6D;
+}
+
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
