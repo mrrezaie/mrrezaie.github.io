@@ -21,3 +21,7 @@ footer {
 nav {
     border-bottom: 1px solid #d5d5d5;
 }
+
+sub, sup {
+    font-size: small;
+}
