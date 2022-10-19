@@ -23,5 +23,6 @@ nav {
 }
 
 sub, sup {
-    font-size: small;
+    vertical-align: sub;
+    font-size: .5em;
 }
