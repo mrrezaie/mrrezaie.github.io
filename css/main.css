@@ -1,10 +1,10 @@
 body {
 /*     background: #f0ffff; */
 	padding: 0px 35px 0px 35px;
-	background-image: url('background.png');
+/* 	background-image: url('background.png');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-size: 100% 100%;
+	background-size: 100% 100%; */
 }
 
 nav ul, footer ul {
