@@ -32,7 +32,6 @@
 					margin: 4px;
 					padding: 4px;
 /*					list-style: none;*/
-					font-weight: bold;
 				}
 
 				#header ul li, #footer ul li{
@@ -41,9 +40,10 @@
 					margin-right: 35px;
 					margin-left: 35px;
 				}
+				#header ul li{font-weight: bold;}
 
 				#header, #footer {
-					background:rgba(0, 51, 102, 0.4);
+					background: #00336699;
 /*					border-top: 1px solid #d5d5d5;*/
 /*					border-bottom: 1px solid #d5d5d5;*/
 					position:fixed; 
@@ -57,6 +57,16 @@
 				.left {float:left;}
 				.right{float:right;}
 
+				a {
+					text-decoration: none;
+					color: #eeeeee;
+				}
+				a:hover {
+/*					text-decoration: underline;*/
+					color: #0000ff;
+				}
+
+
 			</style>  
 		</head>
 		
@@ -68,7 +78,7 @@
 
 			<div id='header'>
 				<ul class='right'>
-					<li><a href="/">Home</a></li>
+					<li><a href="../index.html">Home</a></li>
 					<li><a href="../about/index.html">About</a></li>
 					<li><a href="../notes/index.html">Notes</a></li>
 				</ul>
