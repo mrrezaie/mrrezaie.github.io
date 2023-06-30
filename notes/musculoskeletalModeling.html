@@ -1,0 +1,30 @@
+---
+layout: default
+title: Biomechanics Definition
+---
+
+<div>
+	<h1>MusculoSkeletal Modeling</h1>
+	
+	<p>An appropriate model should be chosen based on the reaserch question. There is no gain in employing a full-body model when only the Kinematics and Dynamics of lower limb joints/muscles are of interest. Removing redundant bodies helps improve Inverse Kinematics and hence, Inverse Dynamics of the joints in question. </p>
+	<p>When using a model with only pelvis and lower limb bodies, caution must be taken in scaling the mass properties. OpenSim Scale tool requires total mass of the subject corresponds to the total mass of the model. In this case, a ratio of 0.464 (Dempster1955) or a more recent one can be used. Otherwise, the mass and inertial properties of bodies wouldn't be valid</p>
+	<p>Locking coordinates or having kinematic constraints (e.g. patellofemoral joint) lead to longer computation time in Inverse Kinematics tool (e.g. 12 s). That's because OpenSim optimizer chooses a different algorithm according to type of the problem (constraints and bounds). Locking + zero weight for the locked coordinates (IKCoordinateTask) improves it significantly (e.g. 800 ms). </p>
+	<p>Kalman Smoothing Inverse Kinematics doesn't accept coordinate weighting, so it may take longer. But the output is much better than OpenSim IK, the curves are less noisy and the patterns make more sense physiologically. </p>
+	<p>Pelvis segment is so important in Kinematics sense, because it has a significant influence on the distal joints Kinematics (e.g. hip and knee). Foot segment is also important due to its influence on the propagation of Inverse Dynamics analysis errors to the proximal segments. So, their markers or the overall segment weight should be higher relative to others in Inverse Kinematics. </p>
+	<p>Unlocking subtalar joint in OpenSim models improves Inverse Kinematics of the proximal joints (particularly non-sagittal plane motions) and hence, the Inverse Dynamics. </p>
+	<p>The large variability in subtalar joint Kinematics and Kinetics is likely due to measurement and modelling error (Falisse2022), it's better not to include its moment in the Static Optimization. </p>
+	<p>Including muscle volume in the cost function improves the estimation of muscle activation by uniformly distributing stress over synergistic muscles, e.g., medial and lateral gastrocnemius (Zargham2019). </p>
+	<p>Higher power of muscle activation in the cost function leads to more synergy and joint contact force. A value between 2.5 and 3.5 would be the best. </p>
+
+	<p> Intersegmental froces and moments can be expressed in the following frames:
+		<li>global coordinate system (JointReaction tool)</li>
+		<li>proximal (parent) segment coordinate system (JointReaction tool) </li>
+		<li>distal (child) segment coordinate system (JointReaction tool) </li>
+		<li>orthogonal joint coordinate system (joint offset orientation) (through scripting) </li>
+		<li>non-orthogonal joint coordinate system (axis of coordinates defined in OpenSim) (InverseDynamics tool)</li> </p>
+	<p>Global coordinate system is subject to the direction of movement (Derrick2020). </p>	
+	<p>In case of investigating bone tissue stress or compressive/shear forces on the bone, distal segment coordinate system would be the best one (Derrick2020). </p>
+	<p>In case of interpreting joint moments as muscles activity and ligaments loading (elements that generate/control the movement), non-orthogonal joint coordinate system would be the best one (Schache2007, Kristianslund2014). </p>
+
+
+</div>
