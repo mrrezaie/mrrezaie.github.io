@@ -20,7 +20,9 @@
 /*					font-size:50%;*/
 					overflow: auto;
 					padding: 40px 35px 40px 35px;
-					background-image: url('../about/files/background.jpg');
+					background-image: linear-gradient(#ffffff77, #ffffff77), url('../about/files/background.jpg');
+/*					background-color: rgba(255, 255, 255, 0.1);*/
+/*					background-blend-mode: lighten;*/
 					background-repeat: no-repeat;
 					background-attachment: fixed;
 					background-size: cover;
@@ -58,11 +60,15 @@
 				.left {float:left;}
 				.right{float:right;}
 
-				a {text-decoration: none; color: #eeeeee;}
-				a:hover {text-decoration: underline;}
+				a {text-decoration: none; color: #0000ee;}
+				a:hover {
+					text-decoration: underline; 
+					font-weight:bold;
+					color: #0000ff;}
 
 				#a {
 					text-decoration: none;
+					color: #eeeeee;
 					
 				}
 				#a:hover {
@@ -92,6 +98,12 @@
 
 			<div>
 				{{ content }}
+
+				<p></p>
+				<p> <a href="biomechanics.html">Biomechanics definition</a> </p>
+				<p> <a href="musculoskeletalModeling.html">MusculoSkeletal Modeling</a> </p>
+
+
 			</div>
 
 
