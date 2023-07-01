@@ -10,18 +10,17 @@
 
 			<style  type="text/css">
 				body {
-/*					margin:0;*/
+					margin:0;
 /*					border:0;*/
-/*					padding:0;*/
+					padding:0;
 /*					height:100%; */
 /*					max-height:100%; */
 /*					background:#fff; */
 					font-family: Calibri, sans-serif;
 /*					font-size:50%;*/
 					overflow: auto;
-					padding: 40px 35px 40px 35px;
-/*					linear-gradient(#ffffffaa, #ffffffaa), */
-					background-image: url('../about/files/background.jpg');
+/*					padding: 40px 35px;*/
+					background-image: linear-gradient(#ffffffcc, #ffffffcc), url('../about/files/background.jpg');
 					background-repeat: no-repeat;
 					background-attachment: fixed;
 					background-size: cover;
@@ -34,52 +33,54 @@
 					font-weight:bold;
 					color: #0000ff;}
 
-				#header, #footer {
+
+				.content {
+				  margin: 5% 5% 2.5% 5%;
+				  padding: 1% 0%;
+				}
+
+
+
+				.topnav {
+					margin: 0%;
+					padding: 0%;
 					list-style-type: none;
-					background: #003366dd;
-/*					border-top: 1px solid #d5d5d5;*/
-/*					border-bottom: 1px solid #d5d5d5;*/
-					position:fixed; 
-					overflow: auto;
-					left:0;
-					right:0;
-				}
-				#header ul, #footer ul {
-					height:1.1em;
-/*					clear:both; */
-					margin: 4px;
-					padding: 4px;
-/*					height:10%;*/
-					color: #eeeeee;
-/*					list-style: none;*/
+					position: fixed;
+					top: 0;
+					width: 100%;
+					overflow: hidden;
+					background-color: #204060;
 				}
 
-				#header ul li, #footer ul li{
-					display: inline;
-					padding: 0px;
-					margin-right: 35px;
-					margin-left: 35px;
-				}
-/*				#header ul li{font-weight: bold;}*/
-
-
-				#footer {bottom:0;}
-				#header {top:0; }
-
-				.left {float:left;}
-				.right{float:right;}
-
-
-
-				#a {
+				.topnav a {
+					float: right;
+					display: inline-block;
+					color: #f2f2f2;
+					text-align: center;
+					margin: 0% 2.5% 0% 0%;
+					padding: 1% 2.5% 1% 2.5%;
 					text-decoration: none;
-					color: #eeeeee;
-					
 				}
-				#a:hover {
-					text-decoration: underline;
-					font-weight:bold;
+
+				.topnav a:hover {
+					background-color: #04AA6D;
+					text-decoration: none;
 					color: #ffffff;
+				}
+
+
+
+				.footer li {
+
+
+					float: left;
+					/*  background-color: #f1f1f1;*/
+					list-style-type: none;
+					overflow: auto;
+					/*   text-align: center;*/
+					margin: 1% 5%;
+					padding: 0%;
+					display: inline;
 				}
 
 
@@ -92,29 +93,23 @@
 		<body>
 
 
-			<div id='header'>
-				<ul class='right'>
-					<li><a id='a' href=      "../index.html">Home</a></li>
-					<li><a id='a' href="../about/index.html">About</a></li>
-					<li><a id='a' href="../notes/index.html">Notes</a></li>
-				</ul>
+			<div class="topnav">
+			  <li><a href=      "../index.html">Home</a></li>
+			  <li><a href="../about/index.html">About</a></li>
+			  <li><a href="../notes/index.html">Notes</a></li>
 			</div>
 
 
-			<div>
-				{{ content }}
+			<div class="content">
+					{{ content }}
 			</div>
 
-			<div id="footer">
-				<ul>
-					<li class='left'><a id='a' href="#">Top</a></li>
-					<li class='right'>&copy; 2023 all rights reserved</li>
-				</ul>
+
+			<div class="footer">
+				<li> <a href="#">Top</a> </li>
+				<li style="float:right">&copy; 2023 all rights reserved</li>
 			</div>
+
 
 		</body>
-
-
-
-
 	</html>
