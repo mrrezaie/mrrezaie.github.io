@@ -12,10 +12,11 @@ title: Biomechanics Definition
 	<p>Kalman Smoothing Inverse Kinematics doesn't accept coordinate weighting, so it may take longer. But the output is much better than OpenSim IK, the curves are less noisy and the patterns make more sense physiologically. </p>
 	<p>Pelvis segment is so important in Kinematics sense, because it has a significant influence on the distal joints Kinematics (e.g. hip and knee). Foot segment is also important due to its influence on the propagation of Inverse Dynamics analysis errors to the proximal segments. So, their markers or the overall segment weight should be higher relative to others in Inverse Kinematics. </p>
 	<p>Unlocking subtalar joint in OpenSim models improves Inverse Kinematics of the proximal joints (particularly non-sagittal plane motions) and hence, the Inverse Dynamics. </p>
+	<p>Typically, three foot markers (CAL, MP1, and MP5) are used to track ankle and subtalar joints Kinematics in one-segment foot model. Since the forefoot markers do not belong to the rearfoot segment in reality, it's better to use more markers on the calcaneous bone, e.g. two posterior and one lateral. </p>
 	<p>The large variability in subtalar joint Kinematics and Kinetics is likely due to measurement and modelling error (Falisse2022), it's better not to include its moment in the Static Optimization. </p>
 	<p>Including muscle volume in the cost function improves the estimation of muscle activation by uniformly distributing stress over synergistic muscles, e.g., medial and lateral gastrocnemius (Zargham2019). </p>
 	<p>Higher power of muscle activation in the cost function leads to more synergy and joint contact force. A value between 2.5 and 3.5 would be the best. </p>
-
+	<p>Joint contact force = intersegmental force + muscles force. </p>
 	<p> Intersegmental froces and moments can be expressed in the following frames:
 		<li>global coordinate system (JointReaction tool)</li>
 		<li>proximal (parent) segment coordinate system (JointReaction tool) </li>
@@ -23,8 +24,11 @@ title: Biomechanics Definition
 		<li>orthogonal joint coordinate system (joint offset orientation) (through scripting) </li>
 		<li>non-orthogonal joint coordinate system (axis of coordinates defined in OpenSim) (InverseDynamics tool)</li> </p>
 	<p>Global coordinate system is subject to the direction of movement (Derrick2020). </p>	
-	<p>In case of investigating bone tissue stress or compressive/shear forces on the bone, distal segment coordinate system would be the best one (Derrick2020). </p>
-	<p>In case of interpreting joint moments as muscles activity and ligaments loading (elements that generate/control the movement), non-orthogonal joint coordinate system would be the best one (Schache2007, Kristianslund2014). </p>
+	<p>In case of interpreting joint moments as the net muscles activation and ligaments loading (elements that generate/control the movement), non-orthogonal joint coordinate system would be the best one (Schache2007, Kristianslund2014). </p>
+	<p>In case of investigating bone tissue stress, parent/child segment coordinate system would be the best one (Derrick2020). For instace, hip joint contact force can be expressed in parent and child segments frames when the loads applid on acetabulum and femoral head are of interest, repsectively. Or, compressive/shear forces on tibia require knee contact force in tibia coordinate system. </p>
+	<p>Joint contact force = intersegmental force + muscle force </p>
 
+<hr>
 
+<p> <i>Last modified: <script>document.write(new Date(document.lastModified))</script></i> </p>
 </div>
